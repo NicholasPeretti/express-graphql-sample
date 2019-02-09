@@ -1,0 +1,16 @@
+{
+  "name": "express-graphql-sample",
+  "version": "1.0.0",
+  "description": "Simple graphql server to try it out",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "Nicholas Peretti <peretti.nicholas@gmail.com>",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.1.1"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
