@@ -3,16 +3,28 @@ const { buildSchema } = require('graphql')
 const App = require('express')()
 const PORT = 4000
 
+const UserMe = {
+  name: 'Nicholas',
+  surname: 'Peretti',
+  ID: 'cin90398d2kdj02'
+}
+
 const schema = buildSchema(`
+  type User {
+    name: String!
+    surname: String!
+    ID: ID!
+  }
+
   type Query {
-    hello: String
+    me: User!,
+    users: [User!]!
   }
 `);
 
 const root = {
-  hello: () => {
-    return 'Hello world!';
-  },
+  me: () => UserMe,
+  users: () => [UserMe]
 };
 
 App.use('/graphql', GraphQlMiddleware({
